@@ -24,11 +24,11 @@ jobs:
       - name: Upload output names.csv
         uses: actions/upload-artifact@v4
         with:
-          name: processed-data
+          name: copy-names
           path: data/names.csv
 
       - name: Upload output places.csv
         uses: actions/upload-artifact@v4
         with:
-          name: processed-data
+          name: copy-places
           path: data/places.csv
