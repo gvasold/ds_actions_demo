@@ -1,0 +1,34 @@
+name: Data Processing Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  process-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+
+          python-version: '3.13'
+      - name: Run split_data.py script
+        run: python scripts/split_data.py
+
+      - name: Upload output names.csv
+        uses: actions/upload-artifact@v2
+        with:
+          name: processed-data
+          path: data/names.csv
+
+      - name: Upload output places.csv
+        uses: actions/upload-artifact@v2
+        with:
+          name: processed-data
+          path: data/places.csv
