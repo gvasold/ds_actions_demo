@@ -1,4 +1,5 @@
-"""Splits the data into two CSV files, one for names and one for places."""
+"""Splits the data into two CSV files, one for names and one for places.
+"""
 
 import csv
 from collections import Counter
